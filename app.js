@@ -1,6 +1,5 @@
 var express = require('express');
-var totoController = require('./controllers/todoControler');
-const todoController = require('../controllers/todoController');
+var todoController = require('./controllers/todoController.js');
 
 var app = express();
 
@@ -8,7 +7,7 @@ var app = express();
 app.set('view engine', 'ejs');
 
 //static files
-app.use(express.static('./public'))
+app.use(express.static('./'))
 
 //fire controllers
 todoController(app);
