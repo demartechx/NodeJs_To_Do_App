@@ -17,7 +17,11 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 //app.use(bodyParser.json());
 
 module.exports = function(app){
-
+    app.get('/', (req, res)=>{
+        //redirect home to todo route
+        res.redirect('/todo')
+    })
+    
     app.get('/todo', function(req, res){
         //get data from mongodb and pass it to view
         Todo.find({}, function(err, data){
